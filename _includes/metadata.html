@@ -18,6 +18,11 @@
 {% else %}
 <!-- PAGE.LANG = fr -->
 {%- endif %}
+{%- if page.author %}
+<!-- PAGE.AUTHOR = {{ page.author }} -->
+{% else %}
+<!-- PAGE.AUTHOR = not specified -->
+{%- endif %}
 {%- if page.author and page.language == "en" %}
 <meta name="dcterms.creator" content="Employment and Social Development Canada"/>
 <meta name="author" content="Employment and Social Development Canada"/>
