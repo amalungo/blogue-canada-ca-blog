@@ -13,22 +13,16 @@
 {%- elsif site.description %}
 <meta name="dcterms.description" content="{{ site.description[ page.language ] }}" />
 {%- endif %}
-{%- if page.language == "en" %}
-<!-- PAGE.LANG = en -->
-{% else %}
-<!-- PAGE.LANG = fr -->
-{%- endif %}
 {%- if page.author %}
-<!-- PAGE.AUTHOR = {{ page.author }} -->
+<meta name="dcterms.creator" content="{{ page.author }}"/>
+<meta name="author" content="{{ page.author }}"/>
 {% else %}
-<!-- PAGE.AUTHOR = not specified -->
-{%- endif %}
-{%- if page.author and page.language == "en" %}
+	{%- if page.language == "en" %}
 <meta name="dcterms.creator" content="Employment and Social Development Canada"/>
-<meta name="author" content="Employment and Social Development Canada"/>
-{% else %}
+	{% else %}
 <meta name="dcterms.creator" content="Emploi et Développement social Canada"/>
-<meta name="author" content="Emploi et Développement social Canada" />
+	{%- endif %}
+<meta name="author" content="{{ site.author[ page.language ] }}" />
 {%- endif %}
 <meta name="dcterms.accessRights” content="2"/>
 <meta name= "gcaaterms.sitename" content="ESDC-EDSC_Canada-Blog"/>
