@@ -13,7 +13,7 @@
 {%- elsif site.description %}
 <meta name="dcterms.description" content="{{ site.description[ page.language ] }}" />
 {%- endif %}
-{%- if page.author && page.language == "en" %}
+{%- if page.author and page.language == "en" %}
 <meta name="dcterms.creator" content="Employment and Social Development Canada"/>
 <meta name="author" content="Employment and Social Development Canada"/>
 {% else %}
